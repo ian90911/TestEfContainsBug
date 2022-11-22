@@ -25,6 +25,7 @@ namespace TestEfContains
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
+            optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
