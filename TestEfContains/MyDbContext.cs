@@ -30,6 +30,8 @@ namespace TestEfContains
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //if change db collation, will fix that bug, but you need drop db and rebuild again.
+            //modelBuilder.UseCollation("Chinese_Taiwan_Stroke_CI_AS");
             modelBuilder.Entity<Test>(entity => {
                 entity.HasKey(e => e.StockId)
                 .HasName("pk_test");
